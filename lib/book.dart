@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-class Book {
-  final int id, pages, readTime, rate;
-  final String title, writer, note;
-  final DateTime date;
-
-  Book({
-    this.id,
-    this.title,
-    this.writer,
-    this.pages,
-    this.rate,
-    this.note,
-    this.date,
-    this.readTime,
-  });
-}
-=======
 import 'package:book_and_movie_tracker/database_connection.dart';
 
 /*int i = await Databaseconnection.instanse.insert({
@@ -34,4 +16,3 @@ print('The unserted id is $i');*/
 print(rowsEffected);*/
 
 var s = await Databaseconnection.instance.search(_tableName, param, args);
->>>>>>> database
