@@ -102,15 +102,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-<<<<<<< HEAD
-  shimmer:
-    dependency: "direct main"
-    description:
-      name: shimmer
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.2"
-=======
   path_provider:
     dependency: "direct main"
     description:
@@ -167,7 +158,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.1"
->>>>>>> database
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -265,9 +262,5 @@ packages:
     source: hosted
     version: "0.2.0"
 sdks:
-<<<<<<< HEAD
-  dart: ">=2.12.0-0.0 <3.0.0"
-=======
   dart: ">=2.12.0 <3.0.0"
->>>>>>> database
   flutter: ">=1.24.0-10"
