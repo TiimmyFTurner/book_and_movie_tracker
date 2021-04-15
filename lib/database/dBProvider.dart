@@ -174,4 +174,22 @@ class DBProvider {
       WHERE id = $id''';
     await db.rawDelete(sql);
   }
+
+  Future<List<Book>> searchBook(String title) async {
+    Database db = await database;
+    final data =
+        await db.rawQuery("SELECT * FROM book WHERE title LIKE '%$title%'");
+    List<Book> books = [];
+    for (final item in data) books.add(Book.fromJson(item));
+    return books;
+  }
+
+  Future<List<Movie>> searchMovie(String title) async {
+    Database db = await database;
+    final data =
+        await db.rawQuery("SELECT * FROM movie WHERE title LIKE '%$title%'");
+    List<Movie> movies = [];
+    for (final item in data) movies.add(Movie.fromJson(item));
+    return movies;
+  }
 }
