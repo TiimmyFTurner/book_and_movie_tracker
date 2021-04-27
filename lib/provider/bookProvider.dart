@@ -10,4 +10,8 @@ class BookProvider extends ChangeNotifier {
   addBook(Book book) {
     DBProvider.db.addBook(book);
   }
+
+  deleteBook(int id) {
+    DBProvider.db.deleteBook(id);
+  }
 }

@@ -10,4 +10,8 @@ class MovieProvider extends ChangeNotifier {
   addMovie(Movie movie) {
     DBProvider.db.addmovie(movie);
   }
+
+  deleteMovie(int id) {
+    DBProvider.db.deleteMovie(id);
+  }
 }
