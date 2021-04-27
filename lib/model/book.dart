@@ -1,6 +1,6 @@
 class Book {
   final int id, pages, readTime, rate;
-  final String title, writer, note;
+  final String title, writer, note, imagePath;
   final DateTime date;
 
   Book({
@@ -12,6 +12,7 @@ class Book {
     this.note,
     this.date,
     this.readTime,
+    this.imagePath,
   });
   factory Book.fromJson(Map<String, dynamic> json) => Book(
         id: json['id'],
@@ -22,5 +23,6 @@ class Book {
         rate: json['rate'],
         date: DateTime.parse(json['date']),
         note: json['note'],
+        imagePath: json['image_path'],
       );
 }

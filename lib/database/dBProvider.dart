@@ -24,7 +24,8 @@ class DBProvider {
     'read_time': 'read_time',
     'rate': 'rate',
     'date': 'date',
-    'note': 'note'
+    'note': 'note',
+    'image_path': 'image_path'
   };
   final Map<String, String> movieTable = {
     'dbName': 'movie',
@@ -36,7 +37,8 @@ class DBProvider {
     'watch_time': 'watch_time',
     'rate': 'rate',
     'date': 'date',
-    'note': 'note'
+    'note': 'note',
+    'image_path': 'image_path'
   };
   Future<void> createBookTable(Database db) async {
     final bookSql = '''CREATE TABLE ${bookTable['dbname']} 
@@ -49,6 +51,7 @@ class DBProvider {
       ${bookTable['rate']} INTEGER,
       ${bookTable['date']} TEXT,
       ${bookTable['note']} TEXT,
+      ${bookTable['image_path']} TEXT,
     )''';
     await db.execute(bookSql);
   }
@@ -65,6 +68,7 @@ class DBProvider {
       ${movieTable['rate']} INTEGER,
       ${movieTable['date']} TEXT,
       ${movieTable['note']} TEXT,
+      ${movieTable['image_path']} TEXT,
     )''';
     await db.execute(movieSql);
   }
@@ -119,7 +123,8 @@ class DBProvider {
       read_time,
       rate,
       date,
-      note
+      note,
+      image_path
     )
     VALUES
     (
@@ -129,7 +134,8 @@ class DBProvider {
       ${book.readTime},
       ${book.rate},
       "${book.date.toString()}",
-      "${book.note}"
+      "${book.note}",
+      "${book.imagePath}"
     )''';
     db.rawInsert(sql);
   }
@@ -145,7 +151,8 @@ class DBProvider {
       watch_time,
       rate,
       date,
-      note
+      note,
+      image_path
     )
     VALUES
     (
@@ -156,7 +163,8 @@ class DBProvider {
       ${movie.watchTime},
       ${movie.rate},
       "${movie.date.toString()}",
-      "${movie.note}"
+      "${movie.note}",
+      "${movie.imagePath}"
     )''';
     await db.rawInsert(sql);
   }

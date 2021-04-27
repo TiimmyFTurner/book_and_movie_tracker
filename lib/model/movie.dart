@@ -1,6 +1,6 @@
 class Movie {
   final int id, time, watchTime, rate;
-  final String title, creator, favActor, note;
+  final String title, creator, favActor, note, imagePath;
   final DateTime date;
 
   Movie({
@@ -13,6 +13,7 @@ class Movie {
     this.note,
     this.date,
     this.watchTime,
+    this.imagePath,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
@@ -25,5 +26,6 @@ class Movie {
         rate: json['rate'],
         date: DateTime.parse(json['date']),
         note: json['note'],
+        imagePath: json['image_path'],
       );
 }
