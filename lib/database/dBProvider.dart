@@ -41,23 +41,23 @@ class DBProvider {
     'image_path': 'image_path'
   };
   Future<void> createBookTable(Database db) async {
-    final bookSql = '''CREATE TABLE ${bookTable['dbname']} 
+    final bookSql = '''CREATE TABLE ${bookTable['dbName']} 
     (
       ${bookTable['id']} INTEGER PRIMARY KEY AUTOINCREMENT,
       ${bookTable['title']} TEXT,
-      ${bookTable['wtiter']} TEXT,
+      ${bookTable['writer']} TEXT,
       ${bookTable['pages']} INTEGER,
       ${bookTable['read_time']} INTEGER,
       ${bookTable['rate']} INTEGER,
       ${bookTable['date']} TEXT,
       ${bookTable['note']} TEXT,
-      ${bookTable['image_path']} TEXT,
+      ${bookTable['image_path']} TEXT
     )''';
     await db.execute(bookSql);
   }
 
   Future<void> createMovieTable(Database db) async {
-    final movieSql = '''CREATE TABLE ${movieTable['dbname']} 
+    final movieSql = '''CREATE TABLE ${movieTable['dbName']} 
     (
       ${movieTable['id']} INTEGER PRIMARY KEY AUTOINCREMENT,
       ${movieTable['title']} TEXT,
@@ -68,7 +68,7 @@ class DBProvider {
       ${movieTable['rate']} INTEGER,
       ${movieTable['date']} TEXT,
       ${movieTable['note']} TEXT,
-      ${movieTable['image_path']} TEXT,
+      ${movieTable['image_path']} TEXT
     )''';
     await db.execute(movieSql);
   }
