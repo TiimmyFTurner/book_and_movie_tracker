@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-class Mvoie {
+class Movie {
   final int id, time, watchTime, rate;
-  final String title, creator, favActor, note;
+  final String title, creator, favActor, note, imagePath;
   final DateTime date;
 
-  Mvoie({
+  Movie({
     this.id,
     this.title,
     this.creator,
@@ -14,25 +13,19 @@ class Mvoie {
     this.note,
     this.date,
     this.watchTime,
+    this.imagePath,
   });
+
+  factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+        id: json['id'],
+        title: json['title'],
+        creator: json['creator'],
+        favActor: json['fav_actor'],
+        time: json['time'],
+        watchTime: json['watch_time'],
+        rate: json['rate'],
+        date: DateTime.parse(json['date']),
+        note: json['note'],
+        imagePath: json['image_path'],
+      );
 }
-=======
-import 'package:book_and_movie_tracker/database_connection.dart';
-
-/*int j = await Databaseconnection.instanse.ins({
-    Databaseconnection.cTitle:
-    .
-    .
-    .
-});
-print('The unserted id is $j');*/
-
-/*List<Map<String, dynamic>> queryRow =
-    await Databaseconnection.instance.queryAll2();
-    print(queryRow);*/
-
-/*int rowsEf = await Databaseconnection.instance.del(id);
-print(rowsEf);*/
-
-var s = await Databaseconnection.instance.search2(_tbName, param, args)
->>>>>>> database

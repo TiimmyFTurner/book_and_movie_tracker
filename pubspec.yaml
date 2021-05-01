@@ -25,10 +25,9 @@ dependencies:
   path_provider: ^2.0.1
   flutter:
     sdk: flutter
-  sqflite: ^2.0.0+3
   shimmer: ^1.1.2
-
   cupertino_icons: ^1.0.2
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
