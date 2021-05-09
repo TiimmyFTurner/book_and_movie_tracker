@@ -1,3 +1,4 @@
+import 'package:book_and_movie_tracker/view/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:book_and_movie_tracker/provider/providers.dart';
 
@@ -21,6 +22,11 @@ class _SettingState extends State<Setting> {
         actions: [
           IconButton(
             icon: Icon(Icons.water_damage_outlined, color: Theme.of(context).primaryColor,),
+           onPressed: () =>  Navigator.of(context).pushReplacement(
+             MaterialPageRoute(
+               builder: (_) => HomePage(),
+             ),
+           ),
           )
         ],
       ),
