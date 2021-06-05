@@ -1,12 +1,11 @@
-
 import 'package:book_and_movie_tracker/view/addItem.dart';
 import 'package:book_and_movie_tracker/view/search.dart';
 import 'package:book_and_movie_tracker/view/setting.dart';
 import 'package:book_and_movie_tracker/view/statistics.dart';
+import 'package:book_and_movie_tracker/widget/bookCard.dart';
+import 'package:book_and_movie_tracker/widget/movieCard.dart';
 import 'package:flutter/material.dart';
-
-import '../FilmBottomNavigator.dart';
-
+import 'package:book_and_movie_tracker/widget/FilmBottomNavigator.dart';
 
 TabController controller;
 
@@ -227,36 +226,28 @@ class _HomePageState extends State<HomePage>
 
   Widget myBody1(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
-      padding: EdgeInsets.all(10),
-      color: Color(0x60EFFFF5),
       child: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(5, 5, 5, 80),
+        physics: BouncingScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
-          return myListCard();
+          return BookCard(null);
         },
-        separatorBuilder: (BuildContext context, int index) => Container(
-          height: 15,
-        ),
+        separatorBuilder: (BuildContext context, int index) =>
+            Container(height: 0),
       ),
     );
   }
 
   Widget myBody2(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
-      padding: EdgeInsets.all(10),
-      color: Color(0x60EFFFF5),
-      child: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(5, 5, 5, 80),
-        itemCount: 4,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
+        itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
-          return myListCard2();
+          return MovieCard(null);
         },
-        separatorBuilder: (BuildContext context, int index) => Container(
-          height: 15,
-        ),
       ),
     );
   }
@@ -268,43 +259,36 @@ class _HomePageState extends State<HomePage>
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          elevation: 0,
           title: Text(
             "BaM Tracker",
             style: TextStyle(color: Colors.black),
-          ), //Text
+          ),
           centerTitle: true,
-          leading:  IconButton(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.red,
-            ),
-            onPressed: (){
+          leading: IconButton(
+            icon: Icon(Icons.settings, color: Theme.of(context).primaryColor),
+            onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>Setting()),
+                MaterialPageRoute(builder: (context) => Setting()),
               );
             },
-          ), //Icon, //Icon
-          backgroundColor: Color(0xffeffff5),
-          elevation: 0,
+          ),
           actions: <Widget>[
-             IconButton(
-              icon: Icon(
-                Icons.search_outlined,
-                color: Colors.red[800],
-              ),
-              onPressed: (){
+            IconButton(
+              icon: Icon(Icons.search_outlined,
+                  color: Theme.of(context).primaryColor),
+              onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>Search()),
+                  MaterialPageRoute(builder: (context) => Search()),
                 );
               },
-            ), //IconButton
+            ),
             IconButton(
-              icon: Icon(
-                Icons.bar_chart,
-                color: Colors.red[800],
-              ),
+              icon:
+                  Icon(Icons.bar_chart, color: Theme.of(context).primaryColor),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -312,9 +296,8 @@ class _HomePageState extends State<HomePage>
                 );
               },
             ),
-          ], //Widget
-        ), //AppBar
-
+          ],
+        ),
         body: TabBarView(
           controller: controller,
           children: [
@@ -337,7 +320,7 @@ class _HomePageState extends State<HomePage>
               );
             }
           },
-          backgroundColor: Color(0xff01c4fe),
+          backgroundColor: Theme.of(context).accentColor,
           child: Icon(
             Icons.add,
             size: 30,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:book_and_movie_tracker/view/homePage.dart';
 
 
@@ -7,7 +6,7 @@ class FilmBottomNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffffb1af),
+      color: Theme.of(context).primaryColor,
       child: TabBar(
         labelColor: Colors.black,
         controller: controller,
