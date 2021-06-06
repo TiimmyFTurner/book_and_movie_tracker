@@ -1,3 +1,4 @@
+import 'package:book_and_movie_tracker/helper/localDateFormatter.dart';
 import 'package:book_and_movie_tracker/model/movie.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,7 @@ class MovieCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${movie.date.toString().substring(0, 10)} | ${movie.watchTime} روز ",
+                    "${movie.watchTime} روز " + " | ${localDateFormatter(movie.date,context)} ",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 16,

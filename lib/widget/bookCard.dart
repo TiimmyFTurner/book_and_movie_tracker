@@ -1,3 +1,4 @@
+import 'package:book_and_movie_tracker/helper/localDateFormatter.dart';
 import 'package:book_and_movie_tracker/model/book.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,7 @@ class BookCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${book.date.toString().substring(0, 10)} | ${book.readTime} روز ",
+                    "${book.readTime} روز " + " | ${localDateFormatter(book.date,context)} ",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 16,
