@@ -3,24 +3,12 @@ import 'package:book_and_movie_tracker/model/movie.dart';
 import 'package:flutter/material.dart';
 
 class MovieCard extends StatelessWidget {
-  final Movie movie2;
+  final Movie movie;
 
-  const MovieCard(this.movie2, {Key key}) : super(key: key);
+  const MovieCard(this.movie, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Movie movie = Movie(
-        creator: 'ممد',
-        date: DateTime.now(),
-        favActor: 'قلی',
-        id: 1,
-        imagePath: 'null',
-        note: 'عالیه ناموسا',
-        rate: 2,
-        time: 120,
-        title: 'mamad dar khane',
-        watchTime: 13);
-
     List<Widget> rateHearts = [];
     for (int i = 5; i > 0; i--) {
       if (i <= movie.rate)
@@ -80,7 +68,8 @@ class MovieCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${movie.watchTime} روز " + " | ${localDateFormatter(movie.date,context)} ",
+                    "${movie.watchTime} روز " +
+                        " | ${localDateFormatter(movie.date, context)} ",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 16,

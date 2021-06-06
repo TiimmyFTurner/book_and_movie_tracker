@@ -6,6 +6,7 @@ import 'package:book_and_movie_tracker/widget/bookCard.dart';
 import 'package:book_and_movie_tracker/widget/movieCard.dart';
 import 'package:flutter/material.dart';
 import 'package:book_and_movie_tracker/widget/FilmBottomNavigator.dart';
+import 'package:book_and_movie_tracker/provider/providers.dart';
 
 TabController controller;
 
@@ -16,37 +17,63 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  Future<List> books ,movies;
+
   @override
   void initState() {
     super.initState();
     controller = TabController(vsync: this, length: 2);
   }
 
-  Widget myBody1(BuildContext context) {
-    return Container(
-      child: ListView.separated(
-        physics: BouncingScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return BookCard(null);
-        },
-        separatorBuilder: (BuildContext context, int index) =>
-            Container(height: 0),
-      ),
+  Widget _bookList(BuildContext context) {
+    books = context.watch<BookProvider>().books;
+     return FutureBuilder<List>(
+      future: books,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Container(
+            child: ListView.separated(
+              physics: BouncingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index) {
+                return BookCard(snapshot.data[index]);
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  Container(height: 0),
+            ),
+          );
+        } else if (snapshot.hasError) {
+          return Text("${snapshot.error}");
+        }
+        return CircularProgressIndicator();
+      },
     );
   }
 
-  Widget myBody2(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-        physics: BouncingScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return MovieCard(null);
-        },
-      ),
+  Widget _movieList(BuildContext context) {
+    movies = context.watch<MovieProvider>().movies;
+    return FutureBuilder<List>(
+      future: movies,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Container(
+            child: ListView.separated(
+              physics: BouncingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(2, 5, 2, 70),
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index) {
+                return MovieCard(snapshot.data[index]);
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  Container(height: 0),
+            ),
+          );
+        } else if (snapshot.hasError) {
+          return Text("${snapshot.error}");
+        }
+        return CircularProgressIndicator();
+      },
     );
   }
 
@@ -99,8 +126,8 @@ class _HomePageState extends State<HomePage>
         body: TabBarView(
           controller: controller,
           children: [
-            myBody1(context),
-            myBody2(context),
+            _bookList(context),
+            _movieList(context),
           ],
         ),
         bottomNavigationBar: FilmBottomNavigator(),

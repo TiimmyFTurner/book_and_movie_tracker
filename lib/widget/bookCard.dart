@@ -3,24 +3,12 @@ import 'package:book_and_movie_tracker/model/book.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  final Book book2;
+  final Book book;
 
-  const BookCard(this.book2, {Key key}) : super(key: key);
+  const BookCard(this.book, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Book book = Book(
-      writer: 'رضا',
-      date: DateTime.now(),
-      pages: 314,
-      id: 1,
-      imagePath: 'null',
-      note: 'عالیه ناموسا',
-      rate: 3,
-      readTime: 7,
-      title: 'خاطرات رضا',
-    );
-
     List<Widget> rateHearts = [];
     for (int i = 5; i > 0; i--) {
       if (i <= book.rate)
@@ -80,7 +68,8 @@ class BookCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "${book.readTime} روز " + " | ${localDateFormatter(book.date,context)} ",
+                    "${book.readTime} روز " +
+                        " | ${localDateFormatter(book.date, context)} ",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 16,
