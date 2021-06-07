@@ -1,4 +1,6 @@
 import 'package:book_and_movie_tracker/model/movie.dart';
+import 'package:book_and_movie_tracker/view/homePage.dart';
+import 'package:book_and_movie_tracker/view/setting.dart';
 import 'package:book_and_movie_tracker/widget/bookCard.dart';
 import 'package:book_and_movie_tracker/widget/movieCard.dart';
 import 'package:flutter/material.dart';
@@ -22,15 +24,23 @@ class _SearchState extends State<Search> {
         ),
         centerTitle: true,
         leading: IconButton(
-            icon: Icon(Icons.settings, color: Theme.of(context).primaryColor),
-            onPressed: () {}),
+          icon: Icon(Icons.settings, color: Theme.of(context).primaryColor),
+          onPressed: () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Setting()),
+          ),
+        ),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           IconButton(
-              icon: Icon(Icons.home_outlined,
-                  color: Theme.of(context).primaryColor),
-              onPressed: () {}),
+            icon: Icon(Icons.home_outlined,
+                color: Theme.of(context).primaryColor),
+            onPressed: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            ),
+          ),
         ],
       ),
       body: Directionality(
@@ -59,7 +69,7 @@ class _SearchState extends State<Search> {
                       ),
                     ),
                   ),
-                  onChanged: (value){
+                  onChanged: (value) {
                     context.read<SearchProvider>().search(value);
                   },
                 ),
