@@ -21,26 +21,38 @@ class _SettingState extends State<Setting> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: Icon(Icons.water_damage_outlined, color: Theme.of(context).primaryColor,),
-           onPressed: () =>  Navigator.of(context).pushReplacement(
-             MaterialPageRoute(
-               builder: (_) => HomePage(),
-             ),
-           ),
+            icon: Icon(
+              Icons.home_outlined,
+              color: Theme.of(context).primaryColor,
+            ),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
           )
         ],
+        leading: IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.arrow_back_ios,
+                color: Theme.of(context).primaryColor)),
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: ListView(
           children: <Widget>[
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12),),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12),
+                ),
+              ),
               child: SwitchListTile(
                 value: context.watch<SettingProvider>().jalali,
-                onChanged: (bool value){
+                onChanged: (bool value) {
                   setState(() {
-                   context.read<SettingProvider>().jalali = value;
+                    context.read<SettingProvider>().jalali = value;
                   });
                 },
                 title: Text(

@@ -45,7 +45,7 @@ class _AddBookState extends State<AddBook> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -58,7 +58,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "اسم کتاب",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -82,7 +82,7 @@ class _AddBookState extends State<AddBook> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -95,7 +95,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "نویسنده",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -121,7 +121,7 @@ class _AddBookState extends State<AddBook> {
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -134,7 +134,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "تعداد صفحات",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -161,7 +161,7 @@ class _AddBookState extends State<AddBook> {
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -174,7 +174,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "زمان مطالعه (روز)",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -213,7 +213,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "امتیاز (از صفر تا پنج)",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -274,7 +274,7 @@ class _AddBookState extends State<AddBook> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -287,7 +287,7 @@ class _AddBookState extends State<AddBook> {
                       ),
                       hintText: "یادداشت",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -446,7 +446,7 @@ class _AddMovieState extends State<AddMovie> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -459,7 +459,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "اسم فیلم",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -483,7 +483,7 @@ class _AddMovieState extends State<AddMovie> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -496,7 +496,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "کارگردان",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -520,7 +520,7 @@ class _AddMovieState extends State<AddMovie> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -533,7 +533,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "بازیگر مورد علاقه",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -555,7 +555,7 @@ class _AddMovieState extends State<AddMovie> {
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -568,7 +568,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "زمان (دقیقه)",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -594,7 +594,7 @@ class _AddMovieState extends State<AddMovie> {
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -607,7 +607,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "زمان تماشا (روز)",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -636,7 +636,7 @@ class _AddMovieState extends State<AddMovie> {
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -649,7 +649,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "امتیاز (از صفر تا پنج)",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -712,7 +712,7 @@ class _AddMovieState extends State<AddMovie> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
-                     fontSize: 17,
+                      fontSize: 17,
                       color: Colors.black,
                     ),
                     decoration: InputDecoration(
@@ -725,7 +725,7 @@ class _AddMovieState extends State<AddMovie> {
                       ),
                       hintText: "یادداشت",
                       hintStyle: TextStyle(
-                       fontSize: 17,
+                        fontSize: 17,
                         color: Colors.black,
                       ),
                     ),
@@ -734,29 +734,6 @@ class _AddMovieState extends State<AddMovie> {
                     },
                   ),
                 ),
-
-                // ElevatedButton(
-                //   style: ButtonStyle(
-                //     backgroundColor: MaterialStateProperty.all(Colors.white),
-                //     shape: MaterialStateProperty.all(
-                //       RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(10)),
-                //       ),
-                //     ),
-                //     child: Container(
-                //       alignment: Alignment.center,
-                //       width: MediaQuery.of(context).size.width,
-                //       height: 50,
-                //       child: Text(
-                //         "Pick Image",
-                //         style: TextStyle(
-                //           fontSize: 17,
-                //           color: Colors.black,
-                //           // fontWeight: FontWeight.w500,
-                //         ),
-                //       ),
-                //     ),
-                //     onPressed: () {}),
                 SizedBox(height: 25),
                 ElevatedButton(
                     style: ButtonStyle(
@@ -812,7 +789,6 @@ class _AddMovieState extends State<AddMovie> {
                         style: TextStyle(
                           fontSize: 17,
                           color: Colors.black,
-                          // fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -843,7 +819,7 @@ class _AddMovieState extends State<AddMovie> {
             color: Theme.of(context).primaryColor,
           ),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Setting()),
             );
