@@ -88,7 +88,6 @@ class _HomePageState extends State<HomePage>
           elevation: 0,
           title: Text(
             "BaM Tracker",
-            style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
           leading: IconButton(
@@ -115,6 +114,7 @@ class _HomePageState extends State<HomePage>
               icon:
                   Icon(Icons.bar_chart, color: Theme.of(context).primaryColor),
               onPressed: () {
+                context.read<StatisticsProvider>().initStatistics();
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Statistics()),
@@ -153,6 +153,6 @@ class _HomePageState extends State<HomePage>
           ),
         ),
       ),
-    ); //Scaffold
+    );
   }
 }
