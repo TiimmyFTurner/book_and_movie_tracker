@@ -271,7 +271,7 @@ class _StatisticsState extends State<Statistics> {
                       child: Text(
                         "${_sp.thisYearBookDiff}" +
                             " صفحه" +
-                            "\nبیشتر از ماه قبل",
+                            "\nبیشتر از سال قبل",
                         style: TextStyle(
                           fontSize: 16,
                           height: 1.3,
