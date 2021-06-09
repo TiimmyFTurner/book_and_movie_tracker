@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  Future<List> books ,movies;
+  Future<List> books, movies;
 
   @override
   void initState() {
@@ -27,10 +27,15 @@ class _HomePageState extends State<HomePage>
 
   Widget _bookList(BuildContext context) {
     books = context.watch<BookProvider>().books;
-     return FutureBuilder<List>(
+    return FutureBuilder<List>(
       future: books,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
+          if (snapshot.data.length == 0) {
+            return Center(
+                child: Text("شما هنوز کتابی اضافه نکردید!",
+                    textDirection: TextDirection.rtl));
+          }
           return Container(
             child: ListView.separated(
               physics: BouncingScrollPhysics(),
@@ -46,7 +51,7 @@ class _HomePageState extends State<HomePage>
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-        return CircularProgressIndicator();
+        return Center(child: CircularProgressIndicator());
       },
     );
   }
@@ -57,6 +62,11 @@ class _HomePageState extends State<HomePage>
       future: movies,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
+          if (snapshot.data.length == 0) {
+            return Center(
+                child: Text("شما هنوز فیلمی اضافه نکردید!",
+                    textDirection: TextDirection.rtl));
+          }
           return Container(
             child: ListView.separated(
               physics: BouncingScrollPhysics(),
@@ -72,7 +82,7 @@ class _HomePageState extends State<HomePage>
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-        return CircularProgressIndicator();
+        return Center(child: CircularProgressIndicator());
       },
     );
   }

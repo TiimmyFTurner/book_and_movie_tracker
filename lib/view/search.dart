@@ -84,6 +84,12 @@ class _SearchState extends State<Search> {
 
   Widget _movieList(BuildContext context) {
     _items = context.watch<SearchProvider>().searchItems;
+    if (_items.length == 0)
+      return Center(
+          child: Text(
+        "متاسفانه فیلم یا کتابی با این کلمه کلیدی پیدا نشد :(",
+        textDirection: TextDirection.rtl,
+      ));
     return Container(
       child: ListView.builder(
         physics: BouncingScrollPhysics(),
