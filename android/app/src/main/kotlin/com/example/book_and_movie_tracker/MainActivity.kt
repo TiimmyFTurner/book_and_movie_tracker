@@ -1,4 +1,4 @@
-package com.example.book_and_movie_tracker
+package com.timothy.bamtracker
 
 import io.flutter.embedding.android.FlutterActivity
 
