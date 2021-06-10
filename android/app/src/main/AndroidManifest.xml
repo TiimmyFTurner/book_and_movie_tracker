@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.timothy.bamtracker">
    <application
-        android:label="book_and_movie_tracker"
+        android:label="BaM Tracker"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

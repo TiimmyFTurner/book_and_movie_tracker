@@ -293,7 +293,7 @@ class _StatisticsState extends State<Statistics> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Statistics",
+          "آمار",
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
